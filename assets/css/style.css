@@ -1,0 +1,496 @@
+@font-face {
+	font-family: "Roboto Cn";
+	src: url("../fonts/Roboto-Condensed.woff2") format("woff2"),
+		url("../fonts/Roboto-Condensed.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.woff2") format("woff2"),
+		url("../fonts/Roboto-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-BlackItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-LightItalic.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto Cn";
+	src: url("../fonts/Roboto-BoldCondensedItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-BoldCondensedItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-MediumItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-MediumItalic.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-ThinItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-ThinItalic.woff") format("woff");
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+		url("../fonts/Roboto-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-LightItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-BoldItalic.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Black.woff2") format("woff2"),
+		url("../fonts/Roboto-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-Light.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-Italic.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Kaushan Script";
+	src: url("../fonts/KaushanScript-Regular.woff2") format("woff2"),
+		url("../fonts/KaushanScript-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto Cn";
+	src: url("../fonts/Roboto-BoldCondensed.woff2") format("woff2"),
+		url("../fonts/Roboto-BoldCondensed.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-BoldItalic.woff2") format("woff2"),
+		url("../fonts/Roboto-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Light.woff2") format("woff2"),
+		url("../fonts/Roboto-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Medium.woff2") format("woff2"),
+		url("../fonts/Roboto-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto Condensed";
+	src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"),
+		url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Thin.woff2") format("woff2"),
+		url("../fonts/Roboto-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Italic.woff2") format("woff2"),
+		url("../fonts/Roboto-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.head-img {
+	width: 100%;
+}
+
+.cus-nav {
+	text-align: center;
+	margin: auto;
+}
+
+.cus-ul {
+	text-align: center;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+.cus-ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 20px;
+}
+
+.cus-ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.user {
+	color: rgb(238, 65, 65);
+}
+
+.section-bg-img {
+	background: linear-gradient(rgba(21, 19, 19, 0.26), rgba(0, 0, 0, 0.49)),
+		url(../images/banner.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+.container-height {
+	margin-top: 140vh;
+	padding-bottom: 20px;
+}
+
+.section-bg-color {
+	background-color: #e8e4e2;
+}
+
+.center-tx {
+	text-align: center;
+}
+.main_img {
+	width: 100%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.bg-section {
+	background-color: #e8e4e2;
+}
+
+.cus-container-white {
+	max-width: 90%;
+	background-color: white;
+}
+
+.cus-container-mx {
+	max-width: 200px;
+	text-align: center;
+	margin: 0 auto;
+	display: inherit;
+}
+
+.step-text {
+	text-align: center;
+	padding: 25px;
+	font-size: 30px;
+	color: rgb(238, 65, 65);
+}
+
+.sub-text {
+	text-align: center;
+	padding: 20px;
+	color: #757575;
+}
+.footer-bg {
+	background-color: rgb(238, 65, 65);
+}
+
+.footer-btn {
+	text-align: center;
+	padding: 45px;
+}
+
+.cus-footer-but {
+	margin-top: 10px;
+}
+
+.footer-got-queston {
+	text-align: center;
+	padding: 45px;
+}
+
+.btn-danger-cus {
+	color: #fff;
+	background-color: transparent !important;
+	border-color: white !important;
+}
+
+.btn-lg-cus {
+	padding: 16px 4rem !important;
+	font-size: 1.25rem !important;
+	line-height: 1.5 !important;
+	border-radius: 0.3rem !important;
+}
+
+/* Subscribe Page */
+
+.bg-color {
+	background-color: #e8e4e2;
+}
+
+.heading-subscribe {
+	text-align: center;
+	padding-top: 40px;
+}
+
+.heading-subscribe h1 {
+	color: rgb(238, 65, 65);
+}
+
+.heading-subscribe p {
+	color: #757575;
+}
+
+.heading {
+	text-align: center;
+	color: rgb(238, 65, 65);
+}
+
+.para-subscribe {
+	text-align: center;
+	padding-top: 10px;
+	color: #757575;
+	font-size: 15px;
+}
+
+.prize-tag-subscribe {
+	text-align: center;
+	color: #757575;
+}
+
+.btn-select-subscribe {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+/* ABOUT US PAGE */
+
+.section-bg-about-us {
+	background-color: #e8e4e2;
+}
+.abtus-heading {
+	text-align: center;
+	padding-bottom: 25px;
+	color: rgb(238, 65, 65);
+	padding-top: 60px;
+}
+
+.abt-us {
+	text-align: center;
+	padding: 60px;
+	color: rgb(238, 65, 65);
+}
+
+.abtus-para {
+	text-align: center;
+	font-size: 15px;
+	color: #757575;
+}
+
+.abt-born {
+	text-align: center;
+	font-size: 15px;
+	color: #757575;
+	padding-bottom: 50px;
+}
+
+.abt-bg-sub {
+	background-color: white;
+}
+
+.subscribe-abt-head {
+	text-align: center;
+	padding-bottom: 25px;
+	color: rgb(238, 65, 65);
+	padding-top: 60px;
+}
+
+.abt-mail-man {
+	text-align: center;
+	color: rgb(238, 65, 65);
+}
+
+.abt-sub-btn {
+	text-align: center;
+	padding-bottom: 25px;
+	color: rgb(238, 65, 65);
+	padding-top: 60px;
+}
+
+/* FAQ PAGE */
+
+.faq-head {
+	text-align: center;
+	padding-bottom: 25px;
+	color: rgb(238, 65, 65);
+	padding-top: 60px;
+}
+
+.q1,
+.q2 {
+	text-align: center;
+	border-bottom: 1px solid #7575757c;
+	padding-top: 15px;
+}
+
+.q3 {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.ans {
+	color: #757575;
+	padding-top: 20px;
+}
+/* Process Page */
+
+.process-bg {
+	background-color: #e8e4e2;
+}
+
+.cus-ul-style {
+	margin-left: 20%;
+}
+
+.cus-ul-style li {
+	padding: 20px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+	color: rgb(238, 65, 65) !important;
+	background-color: transparent !important;
+}
+
+.cus-li-style a {
+	color: black !important;
+}
+
+.cus-con-gender {
+	max-width: 800px !important;
+	margin: 0 auto !important;
+}
+.summary {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.box {
+	font-size: 24px;
+	color: darksalmon;
+}
+
+.box-prize {
+	padding-left: 110px;
+	font-size: 21px;
+	color: darksalmon;
+}
+
+.cus-row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.col-md-cus {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 41.666667%;
+	flex: 0 0 41.666667%;
+	max-width: 41.666667%;
+}
+
+.col-md-50 span {
+	font-size: 32px;
+}
+
+#Tprize {
+	font-size: 32px;
+}
+
+.col-md-50 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 41.666667%;
+	flex: 2 0 100.666667%;
+	max-width: 55.666667%;
+	text-align: end;
+}
+
+.add-form {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
