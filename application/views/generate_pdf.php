@@ -15,7 +15,7 @@ $dompdf = new Dompdf();
 $name =  $this->session->userdata('username');
 $product_name = $this->session->userdata('userdata');
 $product_name = json_decode($product_name['order_details'],true);
-// $product_name = $product_name['term'];
+$product_name = $product_name['term'];
 // echo $product_name;
 $dompdf->loadHtml('<h4>Invioce Generated </h4>'.
     '<h2>Billing Summary</h2><hr>'.
@@ -32,13 +32,7 @@ $dompdf->loadHtml('<h4>Invioce Generated </h4>'.
 
 );  
 
-// $dompdf->loadHtml('<h4>Report For case number: <u>'.$cnum.'</u></h4>'. 
-// '<h3>Report Description</h3><hr>'
-// .trim($con, '"').
-// '<h3>End Note</h3><hr>'
-// .trim($en, '"')
-
-// );  
+// $dompdf->loadHtml('<h4>Report For case number:</h4>');  
  
 // (Optional) Setup the paper size and orientation 
 $dompdf->setPaper('A4', 'landscape'); 

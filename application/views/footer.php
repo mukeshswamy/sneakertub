@@ -3,14 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 footer-btn">
-                    <?php if($this->session->userdata('status') == 1){ ?>
-                    <a href="<?php echo base_url();?>subscribe">
-                        <button type="button"
-                            class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but">Subscribe</button></a>
-                    <?php }else{ ?>
-                    <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but"
-                        disabled>Subscribe</button>
-                    <?php }?>
+                    <?php if ($this->session->userdata('status') == 1) { ?>
+                        <a href="<?php echo base_url(); ?>subscribe">
+                            <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but">Subscribe</button></a>
+                    <?php } else { ?>
+                        <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but" disabled>Subscribe</button>
+                    <?php } ?>
 
                 </div>
                 <div class="col-md-6 footer-got-queston">
@@ -28,8 +26,8 @@
 
 <!-- JS SCRIPT FROM HERE -->
 <script>
-    $(document).ready(function () {
-        $("#signup").click(function () {
+    $(document).ready(function() {
+        $("#signup").click(function() {
             var fd = new FormData();
             fd.append("name", $("#fullname").val());
             fd.append("email", $("#email").val());
@@ -44,21 +42,20 @@
                 data: fd,
                 processData: false,
                 contentType: false,
-                success: function (responce) {
+                success: function(responce) {
                     console.log(responce);
                     if (responce['status_code'] == 201) {
                         var id = responce['id'];
                         location.href = "http://localhost/sneakertub/?id=" + id;
                     }
                 },
-                error: function (jqXHR) {
+                error: function(jqXHR) {
                     alert(jqXHR.responseJSON.validation_message);
                 }
-            }
-            );
+            });
         });
 
-        $("#login").click(function () {
+        $("#login").click(function() {
             var fd = new FormData();
             fd.append("email", $("#log_email").val());
             fd.append("password", $("#log_password").val());
@@ -70,23 +67,24 @@
                 data: fd,
                 processData: false,
                 contentType: false,
-                success: function (responce) {
+                success: function(responce) {
                     console.log(responce);
                     if (responce['status_code'] == 202) {
                         var id = responce['uid'];
                         location.href = "http://localhost/sneakertub/?id=" + id;
                     }
                 },
-                error: function (jqXHR) {
+                error: function(jqXHR) {
                     alert(jqXHR.responseJSON.reason);
                 }
-            }
-            );
+            });
         });
     });
+
     function showprocess(val) {
         location.href = "process/" + val;
     }
+
     function btn(val, name, prize) {
         console.log(val, name, prize);
         $("#term").val(name);
@@ -98,6 +96,7 @@
         $("#Gender").addClass('active');
         $("#Gender").addClass('show');
     }
+
     function btn2(val, name) {
         console.log(val, name);
         $("#gender").val(name);
@@ -108,6 +107,7 @@
         $("#Sneaker-Size").addClass('active');
         $("#Sneaker-Size").addClass('show');
     }
+
     function btn3(val) {
         console.log(val);
         $("#sneaker_size").val(val);
@@ -118,6 +118,7 @@
         $("#shirt-size").addClass('active');
         $("#shirt-size").addClass('show');
     }
+
     function btn4(val) {
         console.log(val);
         $("#shirt_size").val(val);
@@ -139,7 +140,7 @@
         var shirt_size = $("#shirt_size").val();
     }
 
-    $("#checkout").click(function () {
+    $("#checkout").click(function() {
         var fd = new FormData();
         var id = $("#id").val();
         fd.append("term", $("#term").val());
@@ -158,7 +159,7 @@
             data: fd,
             processData: false,
             contentType: false,
-            success: function (responce) {
+            success: function(responce) {
                 console.log(responce);
                 if (responce['status_code'] == 201) {
                     alert("order Placed");
@@ -166,14 +167,17 @@
                     location.href = "http://localhost/sneakertub/pdf";
                 }
             },
-            error: function (jqXHR) {
+            error: function(jqXHR) {
                 alert(jqXHR.responseJSON.validation_message);
             }
-        }
-        );
+        });
     });
 
-
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("setImg");
+        expandImg.src = imgs.src;
+        expandImg.parentElement.style.display = "block";
+    }
 </script>
 
 

@@ -57,6 +57,11 @@ class Welcome extends CI_Controller {
 			$this->load->view('process');
 		}
 	}
+	public function rentProcess()
+	{
+		
+		$this->load->view('rentProcess');
+	}
 	public function loginsignin()
 	{
 		$this->load->view('signup');
@@ -65,7 +70,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('generate_pdf');
 	}
-
+	public function rent()
+	{
+		$this->load->view('Rent');
+	}
 	public function session(){
 		var_dump($_SESSION);
 	}

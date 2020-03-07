@@ -44,6 +44,7 @@
                     </li>
                     <?php }?>
                     <li><a href="<?php echo base_url();?>subscribe">JOINNOW</a></li>
+                    <li><a href="<?php echo base_url();?>rent">RENT</a></li>
                     <li><a href="<?php echo base_url();?>aboutus">ABOUTUS</a></li>
                     <li><a href="<?php echo base_url();?>faq">FAQ</a></li>
                     <li>
