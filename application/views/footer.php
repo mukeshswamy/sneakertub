@@ -178,6 +178,20 @@
         expandImg.src = imgs.src;
         expandImg.parentElement.style.display = "block";
     }
+    $("#inputGroupSelect01").change(function(event) {
+        var met = $('#inputGroupSelect01 :selected').text();
+        console.log($('#inputGroupSelect01 :selected').text());
+    });
+    $("#inputGroupSelect02").change(function(event) {
+        console.log($('#inputGroupSelect02 :selected').text());
+    });
+    $("#inputGroupSelect03").change(function(event) {
+        console.log($('#inputGroupSelect03 :selected').text());
+    });
+
+    function test() {
+        location.href = "http://localhost/sneakertub/checkout";
+    }
 </script>
 
 

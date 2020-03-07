@@ -55,10 +55,12 @@ $route['aboutus'] = 'welcome/aboutus';
 $route['process'] = 'welcome/process/';
 $route['pdf'] = 'welcome/pdf/';
 $route['process/(:any)'] = 'welcome/process/$1';
-$route['rentprocess'] = 'welcome/rentProcess';
+$route['rentprocess/(:any)'] = 'welcome/rentProcess/$1';
 $route['faq'] = 'welcome/faq';
 $route['rent'] = 'welcome/rent/';
 $route['login'] = 'welcome/loginsignin';
+$route['checkout'] = 'welcome/checkout/';
+$route['checkout/(:any)'] = 'welcome/checkout/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

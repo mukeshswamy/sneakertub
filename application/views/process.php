@@ -658,7 +658,7 @@
                                                 <p style="font-size: 32px;">Total</p>
                                             </div>
                                             <div class="col-md-50">
-                                                <span>RS: </span><span id="Tprize"></span>
+                                                <span>&#x20b9; </span><span id="Tprize"></span>
                                             </div>
                                         </div>
                                     </div>

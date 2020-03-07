@@ -49,18 +49,22 @@ class Welcome extends CI_Controller {
 		if(!empty($url)){
 			$data['id'] = $url;
 			$data['tub'] = $this->Products_Model->get_product($data);
-			// json_encode($data, true);
-
 			$this->load->view('header');
 			$this->load->view('process',$data);
 		}else{
 			$this->load->view('process');
 		}
 	}
-	public function rentProcess()
+	public function rentProcess($url = null)
 	{
-		
-		$this->load->view('rentProcess');
+		if(!empty($url)){
+			$data['id'] = $url;
+			$data['getRentProduct'] = $this->Products_Model->getRentProduct($data);
+			$this->load->view('header');
+			$this->load->view('rentProcess',$data);
+		}else{
+			$this->load->view('rentProcess');
+		}
 	}
 	public function loginsignin()
 	{
@@ -73,6 +77,9 @@ class Welcome extends CI_Controller {
 	public function rent()
 	{
 		$this->load->view('Rent');
+	}
+	public function checkout(){
+		$this->load->view('checkout');
 	}
 	public function session(){
 		var_dump($_SESSION);
