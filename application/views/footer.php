@@ -4,10 +4,12 @@
             <div class="row">
                 <div class="col-md-6 footer-btn">
                     <?php if ($this->session->userdata('status') == 1) { ?>
-                        <a href="<?php echo base_url(); ?>subscribe">
-                            <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but">Subscribe</button></a>
+                    <a href="<?php echo base_url(); ?>subscribe">
+                        <button type="button"
+                            class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but">Subscribe</button></a>
                     <?php } else { ?>
-                        <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but" disabled>Subscribe</button>
+                    <button type="button" class="btn btn-danger btn-danger-cus btn-lg btn-lg-cus cus-footer-but"
+                        disabled>Subscribe</button>
                     <?php } ?>
 
                 </div>
@@ -26,8 +28,8 @@
 
 <!-- JS SCRIPT FROM HERE -->
 <script>
-    $(document).ready(function() {
-        $("#signup").click(function() {
+    $(document).ready(function () {
+        $("#signup").click(function () {
             var fd = new FormData();
             fd.append("name", $("#fullname").val());
             fd.append("email", $("#email").val());
@@ -36,45 +38,45 @@
             fd.append("password_confirm", $("#cpassword").val());
             console.log("fd", fd)
             $.ajax({
-                url: 'http://localhost/sneakertub/User/signin',
+                url: 'http://localhost/sneakertubs/User/signin',
                 type: 'POST',
                 cache: false,
                 data: fd,
                 processData: false,
                 contentType: false,
-                success: function(responce) {
+                success: function (responce) {
                     console.log(responce);
                     if (responce['status_code'] == 201) {
                         var id = responce['id'];
-                        location.href = "http://localhost/sneakertub/?id=" + id;
+                        location.href = "http://localhost/sneakertubs/?id=" + id;
                     }
                 },
-                error: function(jqXHR) {
+                error: function (jqXHR) {
                     alert(jqXHR.responseJSON.validation_message);
                 }
             });
         });
 
-        $("#login").click(function() {
+        $("#login").click(function () {
             var fd = new FormData();
             fd.append("email", $("#log_email").val());
             fd.append("password", $("#log_password").val());
             console.log("fd", fd)
             $.ajax({
-                url: 'http://localhost/sneakertub/User/login',
+                url: 'http://localhost/sneakertubs/User/login',
                 type: 'POST',
                 cache: false,
                 data: fd,
                 processData: false,
                 contentType: false,
-                success: function(responce) {
+                success: function (responce) {
                     console.log(responce);
                     if (responce['status_code'] == 202) {
                         var id = responce['uid'];
-                        location.href = "http://localhost/sneakertub/?id=" + id;
+                        location.href = "http://localhost/sneakertubs/?id=" + id;
                     }
                 },
-                error: function(jqXHR) {
+                error: function (jqXHR) {
                     alert(jqXHR.responseJSON.reason);
                 }
             });
@@ -140,7 +142,7 @@
         var shirt_size = $("#shirt_size").val();
     }
 
-    $("#checkout").click(function() {
+    $("#checkout").click(function () {
         var fd = new FormData();
         var id = $("#id").val();
         fd.append("term", $("#term").val());
@@ -153,21 +155,20 @@
         fd.append("address2", $("#add-2").val());
         fd.append("contact", $("#tel").val());
         $.ajax({
-            url: 'http://localhost/sneakertub/index.php/User/Billing/' + id,
+            url: 'http://localhost/sneakertubs/index.php/User/Billing/' + id,
             type: 'POST',
             cache: false,
             data: fd,
             processData: false,
             contentType: false,
-            success: function(responce) {
+            success: function (responce) {
                 console.log(responce);
                 if (responce['status_code'] == 201) {
                     alert("order Placed");
-                    // location.href = "http://localhost/sneakertub/?id=" + id;
-                    location.href = "http://localhost/sneakertub/pdf";
+                    location.href = "http://localhost/sneakertubs/pdf";
                 }
             },
-            error: function(jqXHR) {
+            error: function (jqXHR) {
                 alert(jqXHR.responseJSON.validation_message);
             }
         });
@@ -178,20 +179,64 @@
         expandImg.src = imgs.src;
         expandImg.parentElement.style.display = "block";
     }
-    $("#inputGroupSelect01").change(function(event) {
+    $("#inputGroupSelect01").change(function (event) {
         var met = $('#inputGroupSelect01 :selected').text();
         console.log($('#inputGroupSelect01 :selected').text());
     });
-    $("#inputGroupSelect02").change(function(event) {
+    $("#inputGroupSelect02").change(function (event) {
         console.log($('#inputGroupSelect02 :selected').text());
     });
-    $("#inputGroupSelect03").change(function(event) {
+    $("#inputGroupSelect03").change(function (event) {
         console.log($('#inputGroupSelect03 :selected').text());
     });
 
-    function test() {
-        location.href = "http://localhost/sneakertub/checkout";
-    }
+    $(document).ready(function () {
+        $("#cformmodal").submit(function (e) {
+            var form = $(this);
+            var url = form.attr('action');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function (data) {
+                        console.log("hello");
+                    }
+                });
+            });
+        });
+    
+        $("#ckrent").click(function () {
+        var fd = new FormData();
+        var id = $("#id").val();
+        fd.append("userId", $("#uid").val());
+        fd.append("product_name", $("#product_name").html());
+        fd.append("product_prize", $("#pprize").html());
+        fd.append("size", $("#size").html());
+        fd.append("quantity", $("#pquan").html());
+        fd.append("rent_days", $("#pdays").html());
+        fd.append("address1", $("#p_add-1").val());
+        fd.append("address2", $("#p_add-2").val());
+        fd.append("contact", $("#p_tel").val());
+        $.ajax({
+            url: 'http://localhost/sneakertubs/index.php/User/rentCheckout',
+            type: 'POST',
+            cache: false,
+            data: fd,
+            processData: false,
+            contentType: false,
+            success: function (responce) {
+                console.log(responce);
+                if (responce['status_code'] == 201) {
+                    alert("order Placed");
+                    location.href = "http://localhost/sneakertubs/pdfs";
+                }
+            },
+            error: function (jqXHR) {
+                alert(jqXHR.responseJSON.validation_message);
+            }
+        });
+    });
+
 </script>
 
 

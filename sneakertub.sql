@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 09, 2020 at 04:32 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- Host: 127.0.0.1
+-- Generation Time: Mar 11, 2020 at 11:01 AM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,10 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rentProducts`
+-- Table structure for table `rent`
 --
 
-CREATE TABLE `rentProducts` (
+CREATE TABLE `rent` (
+  `ID` int(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `rent_items` varchar(255) NOT NULL,
+  `address1` varchar(255) NOT NULL,
+  `address2` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rent`
+--
+
+INSERT INTO `rent` (`ID`, `user_id`, `rent_items`, `address1`, `address2`, `phone_number`) VALUES
+(1, 1, '{\"product_name\":\"test\",\"product_prize\":\"99\",\"size\":\"10\",\"quantity\":\"1\",\"rent_days\":\"1\"}', '83 b4 matruchaya society', 'Andheri west', '9819808567'),
+(2, 1, '{\"product_name\":\"test\",\"product_prize\":\"99\",\"size\":\"10\",\"quantity\":\"1\",\"rent_days\":\"1\"}', '83 b4 matruchaya society', 'Andheri west', '9819808567'),
+(3, 24, '{\"product_name\":\"Tsugi Blaze Evo Knit\",\"product_prize\":\"89.99\",\"size\":\"10.5\",\"quantity\":\"1\",\"rent_days\":\"1\"}', '83 B21 Matruchays socity ', 'Mhada lokhandwala Four Bunglows Andheri west', '7045504356'),
+(4, 24, '{\"product_name\":\"Tsugi Blaze Evo Knit\",\"product_prize\":\"89.99\",\"size\":\"10.5\",\"quantity\":\"1\",\"rent_days\":\"1\"}', '83 B21 Matruchays socity Mhada lokhandwala ', 'Four Bunglows Andheri west', '0745504356'),
+(5, 24, '{\"product_name\":\"Tsugi Blaze Evo Knit\",\"product_prize\":\"89.99\",\"size\":\"10.5\",\"quantity\":\"1\",\"rent_days\":\"1\"}', 'socity Mhada lokhandwala Four Bunglows Andheri west', '83 B21 Matruchays ', '0045504356');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rentproducts`
+--
+
+CREATE TABLE `rentproducts` (
   `id` int(255) NOT NULL,
   `productsImage` varchar(255) DEFAULT NULL,
   `productName` varchar(255) DEFAULT NULL,
@@ -38,10 +64,10 @@ CREATE TABLE `rentProducts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `rentProducts`
+-- Dumping data for table `rentproducts`
 --
 
-INSERT INTO `rentProducts` (`id`, `productsImage`, `productName`, `productPrice`, `productSize`, `productQuantity`) VALUES
+INSERT INTO `rentproducts` (`id`, `productsImage`, `productName`, `productPrice`, `productSize`, `productQuantity`) VALUES
 (1, '{\r\n	\"p1\":\"s1.jpeg\",\r\n	\"p2\":\"black1.jpeg\",\r\n	\"p3\":\"black2.jpeg\",\r\n	\"p4\":\"black3.jpeg\"\r\n	\r\n}', 'Puma Clyde Natural - Black', '89.99', NULL, NULL),
 (2, '{\r\n	\"p1\":\"s2.jpeg\",\r\n	\"p2\":\"cream1.jpeg\",\r\n	\"p3\":\"cream2.jpeg\",\r\n	\"p4\":\"cream3.jpeg\"\r\n	\r\n}', 'Puma Clyde Natural - Vachetta', '89.99', NULL, NULL),
 (3, '{\r\n	\"p1\":\"s3.jpeg\",\r\n	\"p2\":\"grey1.jpeg\",\r\n	\"p3\":\"grey2.jpeg\",\r\n	\"p4\":\"grey3.jpeg\"\r\n	\r\n}', 'Tsugi Blaze Evo Knit', '89.99', NULL, NULL),
@@ -139,9 +165,15 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `confirm_id`, `phon
 --
 
 --
--- Indexes for table `rentProducts`
+-- Indexes for table `rent`
 --
-ALTER TABLE `rentProducts`
+ALTER TABLE `rent`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `rentproducts`
+--
+ALTER TABLE `rentproducts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -161,9 +193,15 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `rentProducts`
+-- AUTO_INCREMENT for table `rent`
 --
-ALTER TABLE `rentProducts`
+ALTER TABLE `rent`
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `rentproducts`
+--
+ALTER TABLE `rentproducts`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --

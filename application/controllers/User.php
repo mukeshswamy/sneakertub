@@ -123,6 +123,41 @@ class User extends CI_Controller
             $result = $this->User_model->saveAddress($userVal,$ids);
         }
     }
+    public function rentCheckout(){
+        $this->form_validation->set_rules('product_name', 'pname', 'required');
+        $this->form_validation->set_rules('product_prize', 'prize', 'required');
+        $this->form_validation->set_rules('size', 'size', 'required');
+        $this->form_validation->set_rules('quantity', 'quantity', 'required');
+        $this->form_validation->set_rules('rent_days', 'Days', 'required');
+        $this->form_validation->set_rules('address1', 'Address1', 'required');
+        $this->form_validation->set_rules('address2', 'Address2', 'required');
+        $this->form_validation->set_rules('contact', 'Contact', 'required|regex_match[/^[0-9]{10}$/]');
+        if ($this->form_validation->run() == FALSE) //If validation falied then return 422 status code.
+        {   
+            $response = array();
+            $response['status_code'] = 422;
+            $response['reason'] = "Validation Failed";
+            $response['validation_message'] = validation_errors();
+            $result = $this->output->set_status_header(422)->set_content_type('application/json')->set_output(json_encode($response));
+            return $result;
+        }else{
+            $userVal = array();
+            $userVal['address1'] = $this->input->post('address1',TRUE);
+            $userVal['address2'] = $this->input->post('address2',TRUE);
+            $userVal['phone_number'] = $this->input->post('contact',TRUE);
+            $userVal['user_id'] = $this->input->post('userId',TRUE);
+            // $userVal['cart'] = 1;  
+            $jarr['product_name'] =$this->input->post('product_name',TRUE);
+            $jarr['product_prize'] =$this->input->post('product_prize',TRUE);
+            $jarr['size'] =$this->input->post('size',TRUE);
+            $jarr['quantity'] =$this->input->post('quantity',TRUE);
+            $jarr['rent_days'] =$this->input->post('rent_days',TRUE);
+            $userVal['rent_items'] = json_encode($jarr,true);
+            $new_data = array( 'cart' => 1);
+            $this->session->set_userdata($new_data);
+            $result = $this->User_model->saveRent($userVal);
+        }
+    }
 
     public function Logout(){
         $this->session->unset_userdata('username');

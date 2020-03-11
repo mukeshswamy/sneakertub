@@ -54,6 +54,7 @@ $route['subscribe'] = 'welcome/subscribe';
 $route['aboutus'] = 'welcome/aboutus';
 $route['process'] = 'welcome/process/';
 $route['pdf'] = 'welcome/pdf/';
+$route['pdfs'] = 'welcome/pdfs/';
 $route['process/(:any)'] = 'welcome/process/$1';
 $route['rentprocess/(:any)'] = 'welcome/rentProcess/$1';
 $route['faq'] = 'welcome/faq';

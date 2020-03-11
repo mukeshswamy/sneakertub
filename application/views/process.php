@@ -57,7 +57,7 @@
                                         <div class="container step-text">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span>$99.99</span>
+                                                    <span>&#x20b9; 99.99</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -88,7 +88,7 @@
                                         <div class="container step-text">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span>$299.97</span>
+                                                    <span>&#x20b9; 299.97</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,7 +119,7 @@
                                         <div class="container step-text">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span>$599.94</span>
+                                                    <span>&#x20b9; 599.94</span>
                                                 </div>
                                             </div>
                                         </div>

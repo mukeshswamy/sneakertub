@@ -76,6 +76,24 @@ class User_model extends CI_Model
         $res = $this->output->set_status_header(201)->set_content_type('application/json')->set_output(json_encode($response));
         return $res;
     }
+    public function saveRent($data)
+	{	
+		// inserting the user data
+        $this->db->insert('rent',$data);  
+        // $userId = $this->db->insert_id();   
+        //return 202 status code on successful completion.
+        $datas = array( 
+            'rentData' => $data
+        );
+        $this->session->set_userdata($datas);
+        $response['status_code'] = 201;
+        $response['response_message'] = "Renting done";
+        $response['data'] = $data;
+        // $new_data = array( 'userid' => $userId);
+        // $this->session->set_userdata($new_data);
+        $res = $this->output->set_status_header(201)->set_content_type('application/json')->set_output(json_encode($response));   
+        return $res;
+    }
     public function showIndividualCrate($id) //show Individual company  
     {
         $this->db->select('tub.id as crateid, tub.tub_name as tubname, tub.tub_price as tubprice');

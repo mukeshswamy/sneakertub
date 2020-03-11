@@ -74,12 +74,25 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('generate_pdf');
 	}
+	public function pdfs()
+	{
+		$this->load->view('generate_pdf2');
+	}
 	public function rent()
 	{
 		$this->load->view('Rent');
 	}
 	public function checkout(){
-		$this->load->view('checkout');
+		// $this->load->view('checkout');
+		// echo("hello");
+		$da = $this->input->post('Product_name', true);
+		$data = array();
+		$data['Product_name'] = $this->input->post('Product_name', true);
+		$data['Product_prize'] = $this->input->post('Product_prize',true);
+		$data['size'] = $this->input->post('size',true);
+		$data['quantity'] = $this->input->post('quantity',true);
+		$data['rent_days'] = $this->input->post('rent_days',true);
+		$this->load->view('checkout',$data);
 	}
 	public function session(){
 		var_dump($_SESSION);
